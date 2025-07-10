@@ -1,0 +1,192 @@
+html, body {
+    height: 100%; /* Ensure html and body take full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F9FA; /* A slightly lighter, common modern UI background color */
+    color: #333;
+    display: flex; /* Make body a flex container */
+    flex-direction: column; /* Stack children vertically */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* This property pushes content to the far left and far right */
+    align-items: center;
+    max-width: 1200px; /* Max width of the nav content */
+    margin: 0 auto; /* Centers the nav content */
+    padding: 0; /* Removed padding to bring items closer to corners */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white; /* Ensures the "iValidate" text is white */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.logo img {
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px;
+    filter: brightness(0) invert(1); /* This filter usually turns dark colors white */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px; /* Space between nav items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+
+main {
+    max-width: 1080px; /* Increased width for more appropriate visibility */
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-grow: 1; /* This makes the main content area grow to push footer down */
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#resultCont {
+    min-height: 100px; /* Give some space */
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: center; /* Center loading image initially */
+    padding: 20px 0;
+    flex-direction: column; /* Stack results vertically */
+}
+
+#resultCont img {
+    display: block;
+    margin: 20px auto; /* Center the loading image */
+}
+
+/* Styles for the results container */
+.results-container {
+    width: 100%;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center; /* Vertically align items */
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    font-weight: bold;
+    flex-basis: 40%; /* Adjust as needed */
+    text-align: left;
+    padding-right: 10px;
+    color: #555;
+    font-size: 19px; /* Increased font size for better visibility */
+}
+
+.result-value {
+    flex-basis: 60%; /* Adjust as needed */
+    text-align: right;
+    font-size: 19px; /* Increased font size for better visibility */
+}
+
+/* Style for the icon and text to be on the same line */
+.icon-text-pair {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right within its flex-basis */
+    gap: 5px; /* Space between icon and text */
+}
+
+.status-success {
+    color: #28a745; /* Green color for success */
+    font-weight: bold;
+}
+
+.status-failure {
+    color: #dc3545; /* Red color for failure */
+    font-weight: bold;
+}
+
+.icon {
+    width: 20px; /* Size of the checkmark/cross icons */
+    height: 20px;
+    vertical-align: middle; /* Align icon with text */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    /* Removed margin-top as flex-grow on main will handle spacing */
+}
